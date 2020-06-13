@@ -1,0 +1,6 @@
+{
+  "token": "Discord token here",
+  "prefix": ["bh!"],
+  "playing": "your Brawlhalla skills \ud83d\udcca",
+  "brawlhalla_token": "Brawlhalla token here"
+}
