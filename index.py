@@ -18,8 +18,11 @@ if not tables:
 
 
 bot = commands.Bot(
-    command_prefix=config["prefix"], prefix=config["prefix"],
-    command_attrs=dict(hidden=True)
+    command_prefix=config["prefix"],
+    prefix=config["prefix"],
+    command_attrs=dict(hidden=True),
+    activity=discord.Activity(type=3, name=config["playing"]),
+    status=discord.Status.online
 )
 
 
@@ -33,10 +36,6 @@ class Brawlhalla(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Ready: {self.bot.user} | Servers: {len(self.bot.guilds)}')
-        await self.bot.change_presence(
-            activity=discord.Activity(type=3, name=config["playing"]),
-            status=discord.Status.online
-        )
 
     @commands.command()
     async def ping(self, ctx):
